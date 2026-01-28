@@ -13,7 +13,7 @@ public class Expense {
         this.id = -1;
     }
 
-    public Expense(String name, Category category, double amount, int id) {
+    public Expense(int id, String name, Category category, double amount) {
         this.name = name;
         this.category = category;
         this.amount = amount;
