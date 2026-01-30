@@ -13,6 +13,12 @@ public class Expense {
         this.id = id; 
     }
 
+    public Expense( String name, Category category, double amount) {
+        this.name = name;
+        this.category = category;
+        this.amount = amount;
+    }
+
     public String getName() {
         return name;
     }

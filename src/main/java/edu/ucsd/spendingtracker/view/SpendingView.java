@@ -110,7 +110,7 @@ public class SpendingView extends BorderPane {
         saveBtn.setOnAction(e -> {
             try {
                 double amount = Double.parseDouble(amountField.getText());
-                onSave.accept(new Expense( 1, nameField.getText(), categoryBox.getValue(), amount)); //! have added an arbitrary number for it to work. 
+                onSave.accept(new Expense(nameField.getText(), categoryBox.getValue(), amount)); 
                 modal.close();
             } catch (NumberFormatException ex) {
                 amountField.setStyle("-fx-border-color: red;");
