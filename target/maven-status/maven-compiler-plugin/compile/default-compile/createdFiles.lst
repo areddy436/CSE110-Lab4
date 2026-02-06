@@ -2,7 +2,11 @@ edu/ucsd/spendingtracker/view/SummaryView.class
 edu/ucsd/spendingtracker/presenter/SpendingPresenter.class
 edu/ucsd/spendingtracker/model/Model.class
 edu/ucsd/spendingtracker/presenter/SummaryPresenter.class
+edu/ucsd/spendingtracker/view/charts/PieChartProvider.class
 edu/ucsd/spendingtracker/App.class
+edu/ucsd/spendingtracker/view/charts/IChartProvider.class
+edu/ucsd/spendingtracker/view/charts/BarChartProvider.class
+edu/ucsd/spendingtracker/view/SummaryView$1.class
 module-info.class
 edu/ucsd/spendingtracker/repository/ExpenseRepository.class
 edu/ucsd/spendingtracker/datasource/IDataSource.class
