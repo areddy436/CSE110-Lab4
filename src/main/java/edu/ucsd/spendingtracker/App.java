@@ -1,5 +1,6 @@
 package edu.ucsd.spendingtracker;
 
+import edu.ucsd.spendingtracker.datasource.IDataSource;
 import edu.ucsd.spendingtracker.datasource.InMemoryDataSource;
 import edu.ucsd.spendingtracker.datasource.SqlDataSource;
 import edu.ucsd.spendingtracker.model.Model;
@@ -16,7 +17,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         // InMemoryDataSource dataSource = InMemoryDataSource.getDefaultDataSource();
-        SqlDataSource dataSource = new SqlDataSource();
+        IDataSource dataSource = new SqlDataSource();
 
         ExpenseRepository repository = new ExpenseRepository(dataSource);
 
