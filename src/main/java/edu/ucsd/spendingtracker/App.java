@@ -31,6 +31,7 @@ public class App extends Application {
 
         List<IChartProvider> chartProviders = new ArrayList<>(); 
         chartProviders.add(new BarChartProvider());
+        chartProviders.add(new PieChartProvider());
 
         SpendingPresenter listPresenter = new SpendingPresenter(sharedModel, spendingView);
         SummaryPresenter summaryPresenter = new SummaryPresenter(sharedModel, summaryView, chartProviders);

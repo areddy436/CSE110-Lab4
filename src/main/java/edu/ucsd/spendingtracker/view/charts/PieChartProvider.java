@@ -3,6 +3,7 @@ package edu.ucsd.spendingtracker.view.charts;
 import java.util.Map;
 
 import edu.ucsd.spendingtracker.model.*;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.chart.*;
@@ -11,29 +12,24 @@ public class PieChartProvider implements IChartProvider{
     
     @Override
     public Node createChart(Map<Category, Double> data){
-
-        ObservableList<PieChart.Data> list = {}; //! here is where i stopped 
-    
-        PieChart pieChart = new PieChart();
-
-        XYChart.Series<String, Number> series = new XYChart.Series<>();
-
+        
+        ObservableList<PieChart.Data> list = FXCollections.observableArrayList(); 
         data.forEach((cat, sum) -> {
-            series.getData().add(new XYChart.Data<>(cat.name(), sum));
+            list.add(new PieChart.Data(cat.name(), sum));
         });
 
-        chart.getData().add(series);
+        PieChart pieChart = new PieChart(list);
 
-        for(XYChart.Data<String, Number> entry : series.getData()){
-            String color = Category.valueOf(entry.getXValue()).color;
-            Node bar = entry.getNode();
-            if(bar != null){
-                bar.setStyle("-fx-bar-fill:" + color + ";");
+        for(PieChart.Data entry : list){
+            String color = Category.valueOf(entry.getName()).color;
+            Node slice = entry.getNode();
+            if(slice != null){
+                slice.setStyle("-fx-pie-color:" + color + ";");
             }
         }
 
-        chart.setLegendVisible(false);
-        return (Node)chart;
+        pieChart.setLegendVisible(false);
+        return (Node)pieChart;
     }
 
     @Override
