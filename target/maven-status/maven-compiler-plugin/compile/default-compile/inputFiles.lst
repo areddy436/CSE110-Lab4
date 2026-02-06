@@ -13,4 +13,7 @@
 /Users/rickyzam/Documents/UCSD/CSE110/CSE110-Lab4/src/main/java/edu/ucsd/spendingtracker/repository/ExpenseRepository.java
 /Users/rickyzam/Documents/UCSD/CSE110/CSE110-Lab4/src/main/java/edu/ucsd/spendingtracker/view/SpendingView.java
 /Users/rickyzam/Documents/UCSD/CSE110/CSE110-Lab4/src/main/java/edu/ucsd/spendingtracker/view/SummaryView.java
+/Users/rickyzam/Documents/UCSD/CSE110/CSE110-Lab4/src/main/java/edu/ucsd/spendingtracker/view/charts/BarChartProvider.java
+/Users/rickyzam/Documents/UCSD/CSE110/CSE110-Lab4/src/main/java/edu/ucsd/spendingtracker/view/charts/IChartProvider.java
+/Users/rickyzam/Documents/UCSD/CSE110/CSE110-Lab4/src/main/java/edu/ucsd/spendingtracker/view/charts/PieChartProvider.java
 /Users/rickyzam/Documents/UCSD/CSE110/CSE110-Lab4/src/main/java/module-info.java
