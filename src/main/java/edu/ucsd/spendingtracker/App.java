@@ -1,5 +1,10 @@
 package edu.ucsd.spendingtracker;
 
+import edu.ucsd.spendingtracker.view.charts.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.ucsd.spendingtracker.datasource.IDataSource;
 import edu.ucsd.spendingtracker.datasource.InMemoryDataSource;
 import edu.ucsd.spendingtracker.datasource.SqlDataSource;
@@ -24,8 +29,11 @@ public class App extends Application {
         SpendingView spendingView = new SpendingView();
         SummaryView summaryView = new SummaryView();
 
+        List<IChartProvider> chartProviders = new ArrayList<>(); 
+        chartProviders.add(new BarChartProvider());
+
         SpendingPresenter listPresenter = new SpendingPresenter(sharedModel, spendingView);
-        SummaryPresenter summaryPresenter = new SummaryPresenter(sharedModel, summaryView);
+        SummaryPresenter summaryPresenter = new SummaryPresenter(sharedModel, summaryView, chartProviders);
 
         PresenterManager manager = new PresenterManager();
         manager.defineInteractions(primaryStage, "Spending Tracker", listPresenter, summaryPresenter);
